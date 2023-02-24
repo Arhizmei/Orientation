@@ -18,8 +18,14 @@ class MainActivity : AppCompatActivity() {
         bindingClass.text1.visibility = View.VISIBLE
         when (editReader) {
 
-            "andrey" -> bindingClass.text1.text = "your name is andrey"
-            "vadim" -> bindingClass.text1.text = "your name is vadim" }
+            "andrey" -> bindingClass.text1.text = "ваша зарплата 500 долларов"
+            "vadim" -> bindingClass.text1.text = "вашаш зарплата 1000 долларов"
+
+        else -> {
+
+        bindingClass.text1.text = "нет такого работника"
+
+        }}
 
     }
     }
