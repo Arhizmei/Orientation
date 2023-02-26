@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.zmei.orientation.databinding.ActivityMainBinding
+import constants.constant
 
 class MainActivity : AppCompatActivity() {
     lateinit var bindingClass : ActivityMainBinding
@@ -18,16 +19,26 @@ class MainActivity : AppCompatActivity() {
         bindingClass.text1.visibility = View.VISIBLE
         when (editReader) {
 
-            "andrey" -> bindingClass.text1.text = "ваша зарплата 500 долларов"
-            "vadim" -> bindingClass.text1.text = "вашаш зарплата 1000 долларов"
+
+            constant.dvornik -> {
+            val tempText = "ваша зарплата ${constant.dvornik_currency} долларов"
+            if(bindingClass.editText3?.text.toString() == constant.dvornik_parol)
+            bindingClass.text1.text = tempText}
+
+            constant.director ->{
+            val tempText = "ваша зарплата ${constant.director_currency} долларов"
+            if(bindingClass.editText3?.text.toString()==constant.director_parol)
+            bindingClass.text1.text = tempText}
 
         else -> {
 
         bindingClass.text1.text = "нет такого работника"
-
-        }}
+        }
+        }
 
     }
+
+
     }
 
     }
